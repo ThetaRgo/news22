@@ -15,7 +15,7 @@ import torndb
 class Application(tornado.web.Application):
     def __init__(self, *args, **kwargs):
         super(Application, self).__init__(*args, **kwargs)
-        self.db = torndb.Connection(**config.mysqlconf)
+        #self.db = torndb.Connection(**config.mysqlconf)
 
 
 def main():
