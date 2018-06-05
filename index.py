@@ -14,10 +14,10 @@ from response_code import RET
 import hashlib
 from tornado.web import RequestHandler
 import json
-import torndb
 
 
-class pageindexhdl(RequestHandler):#欢迎页面
+
+class pageindexhdl(BaseHandler):#欢迎页面
     def get(self):
         self.render('index.html')
 
