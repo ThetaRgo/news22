@@ -10,12 +10,14 @@ import tornado.ioloop
 import urls
 import config
 import torndb
+import redis
 
 
 class Application(tornado.web.Application):
     def __init__(self, *args, **kwargs):
         super(Application, self).__init__(*args, **kwargs)
         self.db = torndb.Connection(**config.mysqlconf)
+        self.redis= redis.StrictRedis(**config.redisconf)
 
 
 def main():
@@ -28,5 +30,5 @@ def main():
 
 
 if __name__ == '__main__':
-    print "开始了"
+    print "web running"
     main()

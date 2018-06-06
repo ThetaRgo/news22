@@ -19,6 +19,10 @@ class BaseHandler(RequestHandler):
         """作为RequestHandler对象的db属性"""
         return self.application.db
 
+    @property
+    def redis(self):
+        return self.application.redis
+
     def prepare(self):
         if self.request.headers.get("Content-Type", "").startswith("application/json"):
             self.json_dict = json.loads(self.request.body)
