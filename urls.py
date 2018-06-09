@@ -13,5 +13,6 @@ from tornado.web import StaticFileHandler
 define('port', 9110, type=int, help="服务器运行端口")
 
 rute_urls = [(r'/index', index.pageindexhdl),  # 系统主界面
+             (r'/(\d+)',index.newshdl) #新闻页面
 
              ]
